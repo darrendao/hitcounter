@@ -1,4 +1,59 @@
 <div class="jumbotron text-center">
-  <h1>Hit Counter</h1>
-  <button type="button" class="btn btn-primary btn-lg"><%= @hit_count %></button>
+	<div class="row">
+	  <h1>Hit Counter</h1>
+	</div>
+	<br/>
+  <div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-3">
+								<i class="glyphicon glyphicon-eye-open glyphicon-5x"></i>
+							</div>
+							<div class="col-xs-9 text-right">
+								<div class="huge"><%= @hits_summary[:total_hits] %></div>
+								<div>Total Hits Count</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>   
+
+			<div class="col-lg-4 col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-3">
+								<i class="glyphicon glyphicon-equalizer glyphicon-5x"></i>
+							</div>
+							<div class="col-xs-9 text-right">
+								<div class="huge"><%= @hits_summary[:unique_visitors] %></div>
+								<div>Unique Visitors Count</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>              
+
+			<div class="col-lg-4 col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-3">
+								<i class="glyphicon glyphicon-user glyphicon-5x"></i>
+							</div>
+							<div class="col-xs-9 text-right">
+								<div class="huge"><%= @hits_summary[:top_visitor] %></div>
+								<div>Top Visitor</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>              
+
+		</div>
+	</div>
 </div>
+

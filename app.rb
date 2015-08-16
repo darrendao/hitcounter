@@ -29,9 +29,8 @@ get '/demopage1' do
   request.url + " " +  request.ip
   ret = Hit.create(url: request.url,
              ip_address: request.ip)
-  puts ret.inspect
-  puts "HIT COUNT ADDD"
   @hit_count = Hit.count(url: request.url)
+  @hits_summary = Hit.summary(request.url)
   erb :demopage1
 end
 
