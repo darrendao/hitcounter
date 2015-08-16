@@ -3,6 +3,8 @@
 
 This repo is a coding exercise for implementing a hit counter.
 
+Demo: http://hitcounter-env.elasticbeanstalk.com/
+
 ## Requirements
 * Ruby 1.9.x or greater (tested with 1.9.3-p429 and 2.0.0-p353). Refer to rbenv or RVM for managing your Ruby installations.
 * bundler gem installed (needed for dependency management)
@@ -32,6 +34,11 @@ bundle install
 ```
 ruby app.rb
 ```
+To populate the database with test data
+```
+rake db:seed
+```
+
 ## Running tests
 * Tests are written as specs and stored under the spec directory.
 * Tests can be run as followed
@@ -40,5 +47,8 @@ RACK_ENV=test rake test
 ```
 * This repo has been integrated with Travis CI. When changes are made to the repo, Travis CI will automatically run the tests.
 
+
 ## Production Deployment
-TBD
+* I would recommend running the Sinatra web app using Puma or Passenger and nginx.
+* Use RDS for database backend
+* Or better use, deploy the app using Amazon Elastic Beanstalk. Don't forget to update the DATABASE_URL environment variable so the app knows how to connect to the database.
