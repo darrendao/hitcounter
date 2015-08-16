@@ -5,6 +5,7 @@ require 'json'
 require 'data_mapper'
 require "sinatra/namespace"
 require "sinatra/base"
+require 'tilt/erb'
 require './lib/hit.rb'
 
 configure :development, :test, :production do
@@ -49,7 +50,12 @@ namespace '/api/v1' do
   end
 
   post '/hits' do
-    Hit.create(url: params['url'],
+    a = Hit.create(url: params['url'],
                ip_address: request.ip)
+    if a.id.nil?
+      "error"
+    else
+      a.to_json
+    end
   end
 end

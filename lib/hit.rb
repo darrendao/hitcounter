@@ -24,7 +24,5 @@ class Hit
     results[:unique_visitors] = visitors.size
     results[:top_visitor] = visitors.max_by{|k,v| v}[0]
     return results
-  end
-
-  
+  end  
 end
