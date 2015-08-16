@@ -1,0 +1,20 @@
+    <script type="text/javascript">
+      $(function (){
+        // update hit count
+        hit_url = [location.protocol, '//', location.host, location.pathname].join('');
+        $.ajax({
+          type: "POST",
+          url: "/api/v1/hits?url=" + hit_url
+        }); 
+
+        // Fetch hit count 
+        $.getJSON("/api/v1/hits?url=" + hit_url, function( data ) {
+          $( "#hit_count" ).html( data.hit_count);
+        });
+      });
+    </script>
+
+<div class="jumbotron text-center">
+  <h1>Hit Counter</h1>
+  <button type="button" class="btn btn-primary btn-lg"><span id="hit_count"/></button>
+</div>
