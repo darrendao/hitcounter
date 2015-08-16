@@ -29,7 +29,7 @@ describe "Visit demo page 2" do
   end
 end
 
-describe "Post'ing to API endpoint" do
+describe "POST and GET API endpoint" do
   before do
     Hit.all.destroy
   end
