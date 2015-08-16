@@ -5,6 +5,7 @@ gem 'data_mapper'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'dm-sqlite-adapter', :group => :development
+gem 'dm-mysql-adapter'
 gem "rack-test", "~> 0.6.1", :group => :development
 gem 'minitest', "~> 5.0", :group => :development
 gem 'rake'
