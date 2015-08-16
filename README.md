@@ -26,10 +26,11 @@ sudo apt-get install libxslt-dev libxml2-dev
 ```
 bundle install
 ```
-## Production Deployment
-
 ## Development
-
+* To start the app in development mode
+```
+ruby app.rb
+```
 ## Running tests
 * Tests are written as specs and stored under the spec directory.
 * Tests can be run as followed
@@ -37,3 +38,6 @@ bundle install
 RACK_ENV=test rake test
 ```
 * This repo has been integrated with Travis CI. When changes are made to the repo, Travis CI will automatically run the tests.
+
+## Production Deployment
+TBD
