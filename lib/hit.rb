@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'data_mapper'
 
-
 class Hit
   include DataMapper::Resource
   property :id, Serial
@@ -11,7 +10,14 @@ class Hit
 
   # Return hit summary for a particular url
   def self.summary(url)
-	  hits = Hit.all(url: url)
+	  hits = []
+
+    if(url)
+      hits = Hit.all(url: url)
+    else
+      hits = Hit.all
+    end
+    
     results = {total_hits: hits.size}
 
     # Get some stats regarding visitors
@@ -22,7 +28,12 @@ class Hit
     end
 
     results[:unique_visitors] = visitors.size
-    results[:top_visitor] = visitors.max_by{|k,v| v}[0]
+    if visitors.empty?
+      results[:top_visitor] = "n/a"
+    else
+      results[:top_visitor] = visitors.max_by{|k,v| v}[0]
+    end
+
     return results
   end  
 end
