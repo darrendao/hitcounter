@@ -25,4 +25,6 @@ class Hit
     results[:top_visitor] = visitors.max_by{|k,v| v}[0]
     return results
   end
+
+  
 end

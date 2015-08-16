@@ -25,24 +25,23 @@ get '/' do
   hits.to_json
 end
 
-get '/demopage1' do
+get '/demopage2' do
   request.url + " " +  request.ip
   ret = Hit.create(url: request.url,
              ip_address: request.ip)
-  @hit_count = Hit.count(url: request.url)
   @hits_summary = Hit.summary(request.url)
-  erb :demopage1
+  erb :demopage2
 end
 
-get '/demopage2' do
-  erb :demopage2
+get '/demopage1' do
+  erb :demopage1
 end
 
 # Namespacing the Hit Counter API for version 1
 namespace '/api/v1' do
   get '/hits' do
-    hit_count = Hit.count(url: params['url'])
-    {hit_count: hit_count}.to_json
+    hits_summary = Hit.summary(params['url'])
+    hits_summary.to_json
   end
 
   post '/hits' do
