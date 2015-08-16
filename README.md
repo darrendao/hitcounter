@@ -1,5 +1,6 @@
 # hitcounter
 [![Build Status](https://travis-ci.org/darrendao/hitcounter.svg?branch=master)](https://travis-ci.org/darrendao/hitcounter)
+
 This repo is a coding exercise for implementing a hit counter.
 
 ## Requirements
