@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#demotable').DataTable();
+  } );
+</script>
+
+<table class="table" id="demotable">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>IP Address</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>URL</th>
+      <th>IP Address</th>
+      <th>Timestamp</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @hits.each do |hit| %>
+    <tr>
+      <td><%= hit.url %></td>
+      <td><%= hit.ip_address %></td>
+      <td><%= hit.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

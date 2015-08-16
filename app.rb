@@ -21,8 +21,11 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 get '/' do
-  hits = Hit.all
-  hits.to_json
+  erb :index
+end
+
+get '/demopage1' do
+  erb :demopage1
 end
 
 get '/demopage2' do
@@ -33,8 +36,9 @@ get '/demopage2' do
   erb :demopage2
 end
 
-get '/demopage1' do
-  erb :demopage1
+get '/demopage3' do
+  @hits = Hit.all
+  erb :demopage3
 end
 
 # Namespacing the Hit Counter API for version 1
