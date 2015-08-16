@@ -34,6 +34,11 @@ bundle install
 ```
 ruby app.rb
 ```
+To populate the database with test data
+```
+rake db:seed
+```
+
 ## Running tests
 * Tests are written as specs and stored under the spec directory.
 * Tests can be run as followed
@@ -41,6 +46,7 @@ ruby app.rb
 RACK_ENV=test rake test
 ```
 * This repo has been integrated with Travis CI. When changes are made to the repo, Travis CI will automatically run the tests.
+
 
 ## Production Deployment
 * I would recommend running the Sinatra web app using Puma or Passenger and nginx.
