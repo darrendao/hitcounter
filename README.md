@@ -52,3 +52,10 @@ RACK_ENV=test rake test
 * I would recommend running the Sinatra web app using Puma or Passenger and nginx.
 * Use RDS for database backend
 * Or better use, deploy the app using Amazon Elastic Beanstalk. Don't forget to update the DATABASE_URL environment variable so the app knows how to connect to the database.
+
+## TODO
+There are many features/improvements I would like to add. Here are some of them (not in any particular order)
+* Aggregate/cache hits count in order to improve performance
+* Provide more interesting trending stats
+* Use ElasticSearch to provide users better way to analyze their stats
+
